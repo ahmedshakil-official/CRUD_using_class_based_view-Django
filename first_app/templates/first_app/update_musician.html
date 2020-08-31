@@ -1,0 +1,10 @@
+{% extends 'first_app/base.html' %}
+{% block body_block %}
+    <h3>Update Musician Details</h3>
+    <form method="POST">
+        {{ form.as_p }}
+        {% csrf_token %}
+    <input class="btn btn-md btn-primary" type="Submit" name="Submit" value="Update Musician">
+    </form>
+    <a class="btn btn-md btn-danger" href="{% url  'first_app:delete_musician'  %}">
+{% endblock %}

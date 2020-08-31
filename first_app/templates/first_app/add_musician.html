@@ -1,0 +1,18 @@
+{% extends 'first_app/base.html' %}
+{% block body_block %}
+    {% if form.instance.pk %}
+        <h3>Update Musician Details</h3>
+        <form method="POST">
+            {{ form.as_p }}
+            {% csrf_token %}
+        <input class="btn btn-md btn-primary" type="Submit" name="Submit" value="Update Musician">
+        </form>
+    {% else %}
+        <h3>Add New Musician</h3>
+        <form method="POST">
+            {{ form.as_p }}
+            {% csrf_token %}
+        <input class="btn btn-md btn-info" type="Submit" name="Submit" value="Add Musician">
+        </form>
+    {% endif %}
+{% endblock %}
